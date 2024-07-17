@@ -1,0 +1,65 @@
+html {
+  @apply text-[.0625vw]
+}
+
+body {
+  @apply bg-secondary text-base text-N/N60
+}
+
+.subtitle {
+  @apply text-subtitle font-bold font-unbounded text-N/N60
+}
+
+.subtitle-3lvl {
+  @apply text-subtitle-3lvl font-bold font-unbounded text-N/N60
+}
+
+#mobile-popup-header::after {
+  content: "";
+  @apply bg-gradient-to-l from-white to-[#ddd0] absolute inset-0 pointer-events-none
+}
+
+.closeButton {
+  @apply relative w-[51px] md:w-[88px] h-[48px] md:h-[80px] rounded-bl-[11px] rounded-tr-[11px] bg-A/10 flex items-center justify-center
+}
+
+#popup::after {
+  content: "";
+  @apply hidden md:block absolute left-0 top-[48px] md:top-0 right-0 h-[20px] pointer-events-none bg-gradient-to-b from-[#ffffffb5] to-[#ddd0] w-popup-content mx-auto rounded
+}
+
+.popup-article-content * {
+  @apply text-content font-normal text-[16px] leading-[20px] tracking-[2%]
+}
+.popup-article-content img {
+  @apply rounded mb-[32px]
+}
+.popup-article-content p+img {
+  @apply mt-[32px]
+}
+
+.popup-article-content a {
+  @apply text-A/10
+}
+.popup-article-content a::after {
+  content: "↗";
+  @apply text-A/10 align-bottom
+}
+
+.closeButton::after {
+  content: "";
+  mask-image: linear-gradient(to top, red, red),
+    radial-gradient(circle 15px at center, green 80%, transparent 81%);
+  mask-size: 12px 12px, 100%;
+  mask-composite: subtract;
+  mask-repeat: no-repeat, repeat;
+  mask-position: top left, center;
+  @apply absolute bg-A/10 rotate-90 right-full w-[24px] h-[24px] top-0
+}
+
+.breadcrumb::after {
+  content: '●';
+  @apply text-[6px] align-bottom ml-[6px]
+}
+
+/*  */
