@@ -10,7 +10,7 @@
 .wrapper-btn-mask {
   @apply h-fit pl-[20px] pt-[20px] md:pt-0 md:pb-[20px] bg-white rounded-tl-[33px] md:rounded-tl-[0] md:rounded-bl-[33px] md:mt-[-4px] md:mr-[-4px] md:relative absolute right-0 bottom-0
 }
-
+ 
 .wrapper-btn-mask::after {
   content: "";
   mask-image: linear-gradient(to top, red, red),
