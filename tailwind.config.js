@@ -18,9 +18,9 @@ export default {
     fontSize: {
       "small": ["clamp(12px,14rem,16px)"],
       "base": ["clamp(16px,16rem,32px)"],
-      "extra": ["clamp(24px,48rem,48px)", "clamp(28px,52rem,56px)"],
+      "extra": ["clamp(24px,48rem,48px)", "clamp(28px,55rem,56px)"],
       "subtitle": ["clamp(20px,40rem,40px)", "clamp(22px,45rem,48px)"],
-      "subtitle-3lvl": ["clamp(14px,30rem,24px)", "clamp(16px,30rem,32px)"]
+      "subtitle-3lvl": ["clamp(14px,30rem,24px)", "clamp(16px,34rem,32px)"]
     },
     extend: {
       container: {

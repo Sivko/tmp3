@@ -1,5 +1,5 @@
 <template>
-  <div class="uppercase text-small font-medium flex gap-[8px] whitespace-nowrap truncate">
+  <div class="uppercase text-[14px] md:text-[16px] font-medium flex gap-[8px] whitespace-nowrap truncate tracking-[4%]">
     <nuxt-link v-for="breadcrumb in breadcrumbs" :key="breadcrumbs.name" :to="breadcrumb.link" class="breadcrumb">
       {{ breadcrumb.name }}
     </nuxt-link>
