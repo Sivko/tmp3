@@ -6,12 +6,16 @@ body {
   @apply bg-secondary text-base text-N/N60
 }
 
+.title {
+  @apply font-bold text-extra font-unbounded tracking-wide
+}
+
 .subtitle {
-  @apply text-subtitle font-bold font-unbounded text-N/N60
+  @apply text-subtitle font-bold font-unbounded text-N/N60 tracking-wider
 }
 
 .subtitle-3lvl {
-  @apply text-subtitle-3lvl font-bold font-unbounded text-N/N60
+  @apply text-subtitle-3lvl font-bold font-unbounded text-N/N60 tracking-wide
 }
 
 #mobile-popup-header::after {
@@ -19,9 +23,6 @@ body {
   @apply bg-gradient-to-l from-white to-[#ddd0] absolute inset-0 pointer-events-none
 }
 
-.closeButton {
-  @apply relative w-[51px] md:w-[88px] h-[48px] md:h-[80px] rounded-bl-[11px] rounded-tr-[11px] bg-A/10 flex items-center justify-center
-}
 
 #popup::after {
   content: "";
@@ -31,9 +32,11 @@ body {
 .popup-article-content * {
   @apply text-content font-normal text-[16px] leading-[20px] tracking-[2%]
 }
+
 .popup-article-content img {
   @apply rounded mb-[32px]
 }
+
 .popup-article-content p+img {
   @apply mt-[32px]
 }
@@ -41,9 +44,14 @@ body {
 .popup-article-content a {
   @apply text-A/10
 }
+
 .popup-article-content a::after {
   content: "↗";
-  @apply text-A/10 align-bottom
+  @apply text-A/10 align-bottom ml-[5px] text-[13px]
+}
+
+.closeButton {
+  @apply relative w-[51px] md:w-[88px] h-[48px] md:h-[80px] rounded-bl-[11px] md:rounded-bl-[20px] bg-A/10 flex items-center justify-center
 }
 
 .closeButton::after {
@@ -54,12 +62,21 @@ body {
   mask-composite: subtract;
   mask-repeat: no-repeat, repeat;
   mask-position: top left, center;
-  @apply absolute bg-A/10 rotate-90 right-full w-[24px] h-[24px] top-0
+  @apply absolute bg-A/10 rotate-90 right-[calc(100%-1px)] w-[24px] md:w-[48px] h-[24px] md:h-[48px] top-0
+}
+
+@media screen and (min-width: 768px) {
+  .closeButton::after {
+    mask-image: linear-gradient(to top, red, red),
+      radial-gradient(circle 30px at center, green 80%, transparent 81%);
+    mask-size: 24px 24px, 100%;
+  }
 }
 
 .breadcrumb::after {
   content: '●';
   @apply text-[6px] align-bottom ml-[6px]
 }
+
 
 /*  */

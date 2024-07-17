@@ -2,7 +2,7 @@
   <div>
     <Modal ref="modal">
       <div v-on:scroll="(e) => { e.target.scrollTop ? isScrolled = 1 : isScrolled = 0 }" id="popup"
-        class="w-popup-content m-auto overflow-y-scroll  h-[calc(100dvh-68px)] mt-[100px] rounded-t">
+        class="w-popup-content m-auto overflow-y-scroll  h-[calc(100dvh-68px)] mt-[68px] md:mt-[85px] rounded-t">
         <div
           :class="`absolute top-0 left-0 right-0 w-popup-content mx-auto flex justify-between items-center z-[60] bg-white md:bg-[#fff0] rounded-t overflow-hidden ${isScrolled ? 'shadow md:shadow-none' : ''}`">
           <div></div>
@@ -25,7 +25,7 @@
             <div class="mb-[16px]">
               <TagNews :tags="tags" />
             </div>
-            <h1 id="article-title" class="font-bold text-extra font-unbounded mb-[16px]">{{ title }}</h1>
+            <h1 id="article-title" class="title mb-[16px]">{{ title }}</h1>
             <div
               class="inline-block text-N/N60 mb-[32px] opacity-40 font-medium text-[14px] leading-[14px] tracking-[4%] pb-[4px] border-secondary border-b">
               {{ formatDate(date) }}
@@ -35,8 +35,7 @@
             <div class="popup-article-content">
               <p>
                 Аналитики одного из ведущих игроков на российском рынке кредитования объясняют это завершением
-                околонулевых программ и изменением условий по ряду программ с господдержкой . При этом специалисты ВТБ
-                прогнозируют в дальнейшем замедление роста средней ставки. <a href="#">программ с господдержкой</a> .
+                околонулевых программ и изменением условий по ряду <a href="#">программ с господдержкой</a> .
                 При
                 этом специалисты ВТБ прогнозируют в дальнейшем замедление роста средней ставки.
               </p>
@@ -44,8 +43,8 @@
                 src="https://avatars.dzeninfra.ru/get-zen_doc/1773286/pub_5ee9bfb3ed1592049ef87ba2_5ee9c062c5564636840e52ec/scale_1200">
             </div>
 
-            <div v-if="article">
-              <h2 class="subtitle">Следующая статья</h2>
+            <div v-if="article" class="mt-[32px] md:mt-[64px]">
+              <h2 class="subtitle mb-[16px] md:mb-[32px] ">Следующая статья</h2>
               <PreviewArticle :article="article" />
             </div>
 
