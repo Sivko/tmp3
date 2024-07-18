@@ -37,8 +37,8 @@ body {
   @apply rounded mb-[32px]
 }
 
-.popup-article-content p+img {
-  @apply mt-[32px]
+.popup-article-content p {
+  @apply mb-[32px]
 }
 
 .popup-article-content a {
