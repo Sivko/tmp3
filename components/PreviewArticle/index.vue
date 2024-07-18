@@ -13,6 +13,7 @@
       <TagNews :tags="article.tags" />
     </div>
     <ButtonMaskCard />
+    <ButtonMaskCard />
   </div>
 </template>
 

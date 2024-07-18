@@ -10,11 +10,17 @@ body {
   @apply font-bold text-extra font-unbounded tracking-wide
 }
 
+.title {
+  @apply font-bold text-extra font-unbounded tracking-wide
+}
+
 .subtitle {
+  @apply text-subtitle font-bold font-unbounded text-N/N60 tracking-wider
   @apply text-subtitle font-bold font-unbounded text-N/N60 tracking-wider
 }
 
 .subtitle-3lvl {
+  @apply text-subtitle-3lvl font-bold font-unbounded text-N/N60 tracking-wide
   @apply text-subtitle-3lvl font-bold font-unbounded text-N/N60 tracking-wide
 }
 
@@ -33,6 +39,7 @@ body {
   @apply text-content font-normal text-[16px] leading-[20px] tracking-[2%]
 }
 
+
 .popup-article-content img {
   @apply rounded mb-[32px]
 }
@@ -45,8 +52,14 @@ body {
   @apply text-A/10
 }
 
+
 .popup-article-content a::after {
   content: "↗";
+  @apply text-A/10 align-bottom ml-[5px] text-[13px]
+}
+
+.closeButton {
+  @apply relative w-[51px] md:w-[88px] h-[48px] md:h-[80px] rounded-bl-[11px] md:rounded-bl-[20px] bg-A/10 flex items-center justify-center
   @apply text-A/10 align-bottom ml-[5px] text-[13px]
 }
 
@@ -71,12 +84,22 @@ body {
       radial-gradient(circle 30px at center, green 80%, transparent 81%);
     mask-size: 24px 24px, 100%;
   }
+  @apply absolute bg-A/10 rotate-90 right-[calc(100%-1px)] w-[24px] md:w-[48px] h-[24px] md:h-[48px] top-0
+}
+
+@media screen and (min-width: 768px) {
+  .closeButton::after {
+    mask-image: linear-gradient(to top, red, red),
+      radial-gradient(circle 30px at center, green 80%, transparent 81%);
+    mask-size: 24px 24px, 100%;
+  }
 }
 
 .breadcrumb::after {
   content: '●';
   @apply text-[6px] align-bottom ml-[6px]
 }
+
 
 
 /*  */
