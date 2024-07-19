@@ -16,9 +16,13 @@ export default defineNuxtConfig({
     }
   }], "@pinia/nuxt"],
 
+
+
+
   build: {
     transpile: ['gsap'],
   },
+
 
   //@ts-ignore
   tailwindcss: {

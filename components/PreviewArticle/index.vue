@@ -1,6 +1,7 @@
 <template>
-  <NuxtLink :to="`/popup-news/${article.code}`" class="bg-fillPreview rounded-[16px] md:rounded-lg overflow-hidden flex flex-col md:flex-row md:gap-[24px] p-[4px]
-    relative">
+  <NuxtLink :to="`/popup-news/${article.code}`"
+    :class="`rounded-[16px] md:rounded-lg overflow-hidden flex flex-col md:flex-row md:gap-[24px] p-[4px] relative`"
+    :style="{ background }">
     <div class="relative ">
       <img class="rounded-[14px] md:rounded-lg  h-[164px] w-full md:min-w-[320px] md:h-[220px] object-cover" width="320"
         height="220" alt="" :src="article.picture" />
@@ -13,7 +14,7 @@
       <h3 class="subtitle-3lvl md:flex-1">{{ article.title }}</h3>
       <TagNews :tags="article.tags" />
     </div>
-    <ButtonMaskCard />
+    <ButtonMaskCard :background="background" :edging="edging" />
   </NuxtLink>
 </template>
 
@@ -22,8 +23,9 @@ import TagNews from "~/components/TagNews/index.vue";
 import ButtonMaskCard from "~/components/ButtonMaskCard/index.vue";
 import formatDate from "~/helpers/formatDate"
 import type { Next } from "~/types/IArticle";
+import type { List } from "~/types/ISerchNews";
 
-const { article } = defineProps<{ article: Next }>()
+const { article, background, edging } = defineProps<{ article: Next | List, background: string, edging: string }>()
 
 
 </script>

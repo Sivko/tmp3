@@ -6,7 +6,7 @@
         <div
           :class="`absolute top-0 left-0 right-0 w-popup-content mx-auto flex justify-between items-center z-[60] bg-white md:bg-[#fff0] rounded-t overflow-hidden ${isScrolled ? 'shadow md:shadow-none' : ''}`">
           <div></div>
-          <MobileHeader />
+          <MobileHeader :title="article.data.result.title" />
           <NuxtLink to="/">
             <div class="closeButton "><img class="md:w-[32px] md:h-[32px]" src="~/public/close.svg" width="19"
                 height="19" alt="" /></div>
@@ -33,7 +33,7 @@
 
             <div v-if="article" class="mt-[32px] md:mt-[64px]">
               <h2 class="subtitle mb-[16px] md:mb-[32px] ">Следующая статья</h2>
-              <PreviewArticle :article="article.data.result.next" />
+              <PreviewArticle edging="#fff" background="#F3F3F3"  :article="article.data.result.next" />
             </div>
 
           </div>
