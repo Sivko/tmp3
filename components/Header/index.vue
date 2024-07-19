@@ -1,13 +1,6 @@
-<script setup>
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-</script>
-
 <template>
   <div id="wrapper-header">
-    <div class="flex justify-between text-secondary text-[14px] container mb-5">
+    <!-- <div class="flex justify-between text-secondary text-[14px] container mb-5">
       <div class="flex gap-[10px]">
         <span>Жилая недвижимость </span>
         <span>Коммерческие помещения</span>
@@ -17,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
         <span>Завод БСК</span>
         <span>Индустрия</span>
       </div>
-    </div>
+    </div> -->
 
-    <div class="h-[40px] relative mb-10" id="header-deception">
+    <div class="h-[68px] relative mb-10" id="header-deception">
       <div id="header-bg" class="rounded fixed left-0 right-0 top-[10px] z-[60] px-[16px]">
         <header class="py-[16px] md:py-[22px] flex justify-between items-center container">
           <img src="/logo.png" alt="" width="74" height="22" />
@@ -42,28 +35,22 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
   </div>
 </template>
 
-<script>
+<script lang="ts" setup>
+import { gsap, ScrollTrigger } from '~/gsap';
+import { onMounted } from 'vue'
+
 const fixed = () => gsap.to("#header-bg", { position: "fixed", marginLeft: "20px", marginRight: "20px", background: "rgba(255,255,255,1)", duration: .1 });
 const absolute = () => gsap.to("#header-bg", { position: "absolute", marginLeft: "0", marginRight: "0", background: "rgba(255,255,255,0)", duration: .1 });
 
-export default {
 
-  mounted() {
-    ScrollTrigger.create({
-      trigger: "#header-deception",
-      start: "top",
-      endTrigger: "body",
-      end: "bottom -1000%",
-      onToggle: (self) => self.isActive ? fixed() : absolute(),
-      onUpdate: (self) => { },
-    });
-
-    document.addEventListener("custom_statusOpenModal", function (event) {
-      const { status } = event.detail
-      status ? fixed() : absolute();
-    });
-  }
-
-}
+onMounted(() => {
+  ScrollTrigger.create({
+    trigger: "#header-deception",
+    start: "top",
+    endTrigger: "body",
+    end: "bottom -1000%",
+    onToggle: (self) => self.isActive ? fixed() : absolute(),
+  });
+})
 
 </script>

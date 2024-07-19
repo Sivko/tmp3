@@ -4,20 +4,22 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { IContent } from "~/types/IArticle";
+
 import Text from "./Text.vue"
 import Default from "./Default.vue"
 import MediaBlock from "./MediaBlock.vue"
 
-const { content } = defineProps(['content'])
+const { content } = defineProps<{ content: IContent[] }>()
 
-const components = {
+const components: Record<string, Object> = {
   "default": Default,
   "text": Text,
   "mediaBlock": MediaBlock
 }
 
-const getCurrentComponent = (type) => {
+const getCurrentComponent = (type: string) => {
   return components[type] ?? components["default"]
 }
 

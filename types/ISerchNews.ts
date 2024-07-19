@@ -1,17 +1,17 @@
-export default interface INews {
+export interface ISearchNews {
   status: string;
   data: Data;
   errors: any[];
 }
 
-interface Data {
+export interface Data {
   head: any[];
   params: Params;
   filter: Filter2;
   result: Result;
 }
 
-interface Result {
+export interface Result {
   elementsCount: number;
   pageSize: number;
   currentPage: number;
@@ -19,7 +19,7 @@ interface Result {
   starred: Starred;
 }
 
-interface Starred {
+export interface Starred {
   id: number;
   code: string;
   date: string;
@@ -28,20 +28,20 @@ interface Starred {
   picture: string;
 }
 
-interface Tag2 {
+export interface Tag2 {
   name: string;
   code: string;
   values: Value2[];
 }
 
-interface Value2 {
+export interface Value2 {
   name: string;
   code: string;
   color: string;
   src?: any;
 }
 
-interface List {
+export interface List {
   id: number;
   code: string;
   date: string;
@@ -50,49 +50,59 @@ interface List {
   picture: string;
 }
 
-interface Filter2 {
+export interface Filter2 {
   years: Years;
   tags: Tag[];
 }
 
-interface Tag {
+export interface Tag {
   name: string;
   code: string;
   values: Value[];
 }
 
-interface Value {
+export interface Value {
   name: string;
   code: string;
   color: string;
   src?: (null | string)[];
 }
 
-interface Years {
+export interface Years {
   name: string;
   code: string;
   values: number[];
 }
 
-interface Params {
+export interface Params {
   sort: Sort;
   filter: Filter;
   limit: Limit;
   select: string[];
 }
 
-interface Limit {
+export interface Limit {
   nPageSize: number;
   iNumPage: string;
 }
 
-interface Filter {
+export interface Filter {
+  '0': _02;
   ACTIVE: string;
   IBLOCK_ID: number;
+  PROPERTY_HIDE_IN_INDEX_PAGE: boolean;
 }
 
-interface Sort {
+export interface _02 {
+  '0': _0;
+  LOGIC: string;
+}
+
+export interface _0 {
+  PROPERTY_TAG_TYPES: string;
+}
+
+export interface Sort {
   ACTIVE_FROM: string;
   SORT: string;
 }
-

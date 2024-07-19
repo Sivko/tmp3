@@ -1,8 +1,8 @@
 <template>
-  <p>{{ content }}</p>
+  <p v-html="content"></p>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { props } = defineProps(['props'])
 const { content } = props
 </script>

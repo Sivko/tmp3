@@ -1,6 +1,6 @@
 <template>
   <div class="flex gap-[8px] text-[14px] leading-[18px] tracking-[2%]">
-    <div v-for="(tag, index) in tags">
+    <div v-for="(tag, index) in tags" class="contents">
       <nuxt-link v-for="(value, index) in tag.values" :to="value.src"
         :class="`flex items-center gap-[4px] rounded-md border px-[12px] py-[4px] text-${getColor(value.color)} border-${getColor(value.color)}`">
         <span v-if="value.before"
