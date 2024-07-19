@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const { background, edging } = defineProps<{ background: string, edging: string }>()
+const { background, edging } = defineProps<{ background: string, edging : string }>()
 </script>
 
 <style>
@@ -24,7 +24,7 @@ const { background, edging } = defineProps<{ background: string, edging: string 
   mask-composite: subtract;
   mask-repeat: no-repeat, repeat;
   mask-position: top left, center;
-  background: v-bind(background);
+  background: v-bind(edging);
   @apply absolute right-0 md:right-[calc(100%-1px)] w-[24px] md:w-[48px] h-[24px] md:h-[48px] top-[-24px] md:top-0 rotate-180 md:rotate-90
 }
 
@@ -36,7 +36,7 @@ const { background, edging } = defineProps<{ background: string, edging: string 
   mask-composite: subtract;
   mask-repeat: no-repeat, repeat;
   mask-position: top left, center;
-  background: v-bind(background);
+  background: v-bind(edging);
   @apply absolute right-[100%] md:right-0 w-[24px] md:w-[48px] h-[24px] md:h-[48px] md:top-[100%] rotate-180 md:rotate-90 bottom-0
 }
 

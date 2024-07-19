@@ -1,18 +1,18 @@
 <template>
   <div id="mobile-popup-header" class="whitespace-nowrap md:hidden truncate pl-[16px] flex-1">
     <h1 v-if="mobileHeaderFixed == 'article-title'" class="font-bold text-[24px] leading-[28px] font-unbounded">
-      {{ data.title }}</h1>
+      {{ title }}</h1>
     <Breadcrumbs v-else :articleName="title" />
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { onMounted, ref } from 'vue'
 import { ScrollTrigger } from "~/gsap"
 
-const mobileHeaderFixed = ref("article-title")
+const mobileHeaderFixed = ref("tags")
 
-const { title } = defineProps<{ title:string}>(["title"])
+const { title } = defineProps<{ title: string }>()
 
 onMounted(async () => {
   await nextTick()

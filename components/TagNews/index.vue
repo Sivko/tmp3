@@ -1,34 +1,40 @@
 <template>
   <div class="flex gap-[8px] text-[14px] leading-[18px] tracking-[2%]">
     <div v-for="(tag, index) in tags" class="contents">
-      <nuxt-link v-for="(value, index) in tag.values" :to="value.src"
+      <div v-for="(value, index) in tag.values"
         :class="`flex items-center gap-[4px] rounded-md border px-[12px] py-[4px] text-${getColor(value.color)} border-${getColor(value.color)}`">
-        <span v-if="value.before"
-          :class="'w-[11px] h-[11px] rounded-full text-white text-[8px] flex items-center justify-center bg-' + getColor(value.color)">{{
-            tag.before }}</span>
+        <span v-if="value.src"
+          :class="'w-[18px] h-[18px] rounded-full text-white text-[8px] flex items-center justify-center'">
+          <img :src="value.src" />
+        </span>
         {{ value.name }}
-      </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
 
-<script>
+<!-- <script>
 export default {
   props: [
     'tags'
   ]
 }
-</script>
+</script> -->
 
-<script setup>
-// const colors = ["A/10", "A/20"]
-const colors = {
+<script setup lang="ts">
+import type { Tag } from "~/types/IArticle";
+
+
+const { tags } = defineProps<{ tags: Tag[] }>()
+
+
+const colors: Record<string, string> = {
   "red": "A/10",
   "blue": "A/20",
 }
 
-function getColor(key) {
-  const color = colors[key] ?? color["red"]
+function getColor(key: string) {
+  const color = colors[key] ?? colors["red"]
   return color
 }
 

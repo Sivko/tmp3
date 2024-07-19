@@ -3,7 +3,7 @@
     :class="`rounded-[16px] md:rounded-lg overflow-hidden flex flex-col md:flex-row md:gap-[24px] p-[4px] relative`"
     :style="{ background }">
     <div class="relative ">
-      <img class="rounded-[14px] md:rounded-lg  h-[164px] w-full md:min-w-[320px] md:h-[220px] object-cover" width="320"
+      <img class="rounded-[14px] md:rounded-lg  h-[164px] w-full md:w-[320px] md:h-[220px] object-cover" width="320"
         height="220" alt="" :src="article.picture" />
       <div
         class="absolute left-[16px] top-[16px] py-[8px] px-[16px] font-medium tracking-[4%] bg-lilac bg-opacity-80 text-white rounded-lg">

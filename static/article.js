@@ -110,7 +110,7 @@ export default {
         },
         {
           "type": "text",
-          "content": "Успейте <a href=\"#/profitbase/house/97434/smallGrid?propertyId=9859077&floorNumber=2§ionNumber=1&facadeId=38797&filter=property.count:1,2&filter=property.type:property&filter=property.status:AVAILABLE\">купить квартиру</a> по специальной цене 3 930 550 руб. со скидкой 50 000 руб.! Ждём вас, новые соседи."
+          "content": "Успейте купить квартиру по специальной цене 3 930 550 руб. со скидкой 50 000 руб.! Ждём вас, новые соседи."
         }
       ],
       "advantage_slider_elements": null,
